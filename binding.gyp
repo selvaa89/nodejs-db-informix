@@ -36,8 +36,7 @@
         '-fsigned-char',
       ],
       'cflags_cc': [
-        '-fexceptions',
-        '-std=c++11',
+        '-fexceptions'
       ],
       'ldflags': [
         '-lpthread',
