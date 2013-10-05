@@ -26,7 +26,7 @@ def set_options(opt):
 def configure(conf):
     conf.check_tool('compiler_cxx')
     conf.check_tool('node_addon')
-    
+
     conf.env.append_unique('THREADLIB', ['POSIX'])
 
     # Informix flags and libraries
@@ -39,7 +39,7 @@ def configure(conf):
         informixdir = '/opt/informix'
 
     # Enables all the warnings that are easy to avoid
-    conf.env.append_unique('CXXFLAGS', ['-Wall', '-std=c++11'])
+    conf.env.append_unique('CXXFLAGS', ['-Wall'])
 
     if Options.options.warn:
         # Extra warnings
@@ -106,7 +106,7 @@ def test(tst):
     test_binary = 'nodeunit'
     if Options.options.debug:
         test_binary = 'nodeunit_g'
-    
+
     Utils.exec_command(test_binary + ' tests/tests.js')
 
 def lint(lnt):
